@@ -1,30 +1,35 @@
-# This function takes as arguments the ().txt output file from a MultiNest 
-# run and returns the marginalized posterior from the sample posterior
+# The "posterior" function takes as arguments the CHAINS/().txt output file from a MultiNest 
+# run and returns the marginalized posterior from the sample posterior for parameter wp
+
+# The CHAINS/().txt npars + 2 columns. The first column is the sample probability (this is
+# the sample prior mass multiplied byt the likelihood and normalized by the evidence).
+# The second columns is -2·Likelihood.
+# The following columns corresponds to each parameter
 
 # npars is the dimension of the parameter space
 # wp gives the parameter for which we construct the posterior distribution
 # nBIN-1 is the number of bins in the posterior histogram
+
+# INPUPTS: the CHAINS/().txt file, npars, wp, nBIN
+# OUTPUTS: returns an histogram of the marginalized posterior for the parameter wp with nBIN
+
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 import numpy as np
 
 def posterior(filename, npars, wp, nBIN):
     sample_posterior=[]
-    sample_logLike=[]
     param=[]
     f=open(filename, 'r')
     for line in f:
         Data=line.split()
         try:
             sample_posterior.append(float(Data[0]))
-            sample_logLike.append(-0.5*float(Data[1]))
             param.append(float(Data[1+wp]))
         except IndexError:
             print Data        
     plt.figure(1)
     plt.scatter(param, sample_posterior)
-    #plt.figure(2)
-    #plt.scatter(parameter, sample_logLike)
     MAXparam=max(param); MINparam=min(param) 
 # BINS is an array that contains the limits of the BINS in the histogram
     BINS=np.linspace(MINparam, MAXparam, nBIN)
@@ -47,7 +52,4 @@ def posterior(filename, npars, wp, nBIN):
     plt.figure(3)
     plt.plot(paramsBINS, pointsBIN)
     plt.hist(param, nBIN-1, color='white')
-    #plt.plot(x, norm.pdf(x, mean, sd))
-    #plt.figure(4)
-    #plt.bar(BINS, pointsBIN)
     plt.show()
