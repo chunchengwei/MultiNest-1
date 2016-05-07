@@ -2,9 +2,12 @@ In the posterior.py file I have computed the marginal posterior distribution wit
 which lead to:
 (1) Different posterior distribution morphology
 (2) Same area within the p.d.f. This area should be equal 1. Instead is equal to the size of the bin, 
-therefore there is a dependence with the size of the bin which I do not understand.
+    therefore there is a dependence with the size of the bin which I do not understand.
 
 The two methods are described below:
 (1) The posterior distribution is just given by the number of points inside each bin divided by
 the total number of points (the total number of points in the case under study is 7600)
-(2) 
+(2) Given a bin with values of parameters between param_i and param_(i+1), the value of the 
+    posterior is the sum of sample-posterior (first column) of those parameters that lie inside
+    the bin.
+This second method give the same results as the matlab program downloaded from Internet.
