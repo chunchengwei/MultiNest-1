@@ -18,3 +18,4 @@ number of points. This is equal to include the following code:
     for i in range(len(postBIN)):
         postBIN[i]=postBIN[i]*pointsBIN[i]
 >>
+With this new method I obtain a value for the area also dependent on the size bin and which is bigger than 1.
