@@ -51,7 +51,7 @@ def posterior(filename, npars, wp, nBIN):
            if param[j]>BINS[i] and param[j]<BINS[i+1]: 
                pointsBIN[i]+=1.
                postBIN[i]+=sample_posterior[j]
-        #pointsBIN[i]=pointsBIN[i]/len(sample_posterior)
+        pointsBIN[i]=pointsBIN[i]/len(sample_posterior)
     plt.figure(1)
     plt.plot(paramsBINS, postBIN)
     plt.figure(2)
