@@ -36,15 +36,13 @@ def posterior(filename, npars, wp, nBIN):
     sizeBIN=BINS[1]-BINS[0]
 # paramsBINS gives the medium point inside each bin
     paramsBINS=np.arange(MINparam+sizeBIN/2., MAXparam, sizeBIN)
-# postBIN is the value of the posterior in each BIN
-    #postBIN=[]
+# pointsBIN have size nBIN and contains the number of points inside each bin. 
+# Without taking into account the sample post
     pointsBIN=[]
     for i in range(len(BINS)-1):        
-        #postBIN.append(0)
         pointsBIN.append(0.)
         for j in range(len(param)):
            if param[j]>BINS[i] and param[j]<BINS[i+1]: 
-               #postBIN[i]+=sample_posterior[j]
                pointsBIN[i]+=1.
         #pointsBIN[i]=pointsBIN[i]/len(sample_posterior)
     #mean=0.682948; sd=0.12399
