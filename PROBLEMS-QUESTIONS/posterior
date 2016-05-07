@@ -12,6 +12,9 @@ the total number of points (the total number of points in the case under study i
     the bin.
 This second method give the same results as the matlab program downloaded from Internet (gives the same morphology)
 
+The dependence of, at least the (2) method (I need to think more on the (1)), with the Bin's size is due to the fact that the sum
+of the sample posterior probability over all the points in the sample (7600) equals 1. (I have checked this statement via Canopy).
+
 I have try a third method to compute the posterior which is multiply the posterior value obtain with method (2) by the 
 number of points. This is equal to include the following code:
 >>
