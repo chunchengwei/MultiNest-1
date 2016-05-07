@@ -10,4 +10,11 @@ the total number of points (the total number of points in the case under study i
 (2) Given a bin with values of parameters between param_i and param_(i+1), the value of the 
     posterior is the sum of sample-posterior (first column) of those parameters that lie inside
     the bin.
-This second method give the same results as the matlab program downloaded from Internet.
+This second method give the same results as the matlab program downloaded from Internet (gives the same morphology)
+
+I have try a third method to compute the posterior which is multiply the posterior value obtain with method (2) by the 
+number of points. This is equal to include the following code:
+>>
+    for i in range(len(postBIN)):
+        postBIN[i]=postBIN[i]*pointsBIN[i]
+>>
