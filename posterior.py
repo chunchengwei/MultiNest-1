@@ -56,5 +56,6 @@ def posterior(filename, npars, wp, nBIN):
     plt.plot(paramsBINS, postBIN)
     plt.figure(2)
     plt.plot(paramsBINS, pointsBIN)
+    plt.figure(3)
     plt.hist(param, nBIN-1, color='white')
     plt.show()
