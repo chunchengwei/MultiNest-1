@@ -1,0 +1,14 @@
+I can thorugh my analysis away, or the results about the scale radius for the following reason:
+(1) The prior range allow for the scale radius is 10 to 300 kpc. I am only considering the rotation curve for 
+    galactocentric distances up to 25 kpc. Therefore, any result beyond this radii is an extrapolation and is
+    not consistent.
+    
+Ariana ask me, what are my results for the scale radius when using a NFW ( this is a generalized NFW, with α=1).
+Since this α-value is bigger than the best fit obtain for a generalized, the new analyses pointed towards 
+bigger scale radius (of the order of 80 kpc). Again, this could not be taken as a consistent result since is 
+just an extrapolation. But it may be interesting since it is contrary at what we where thinking, pussing to lower
+scales radius values which are expected from simulations.
+
+
+PROSPECTS:
+(1) Incorporate observed rotation velocities in the outer galaxy.
